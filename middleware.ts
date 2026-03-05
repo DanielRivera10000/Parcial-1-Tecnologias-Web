@@ -5,11 +5,11 @@ const locales = ["es", "en"] as const;
 const COOKIE_NAME = "NEXT_LOCALE";
 
 function getPreferredLocale(request: NextRequest) {
-  // 1) Cookie (preferencia del usuario)
+
   const cookieLocale = request.cookies.get(COOKIE_NAME)?.value;
   if (cookieLocale === "es" || cookieLocale === "en") return cookieLocale;
 
-  // 2) Idioma del navegador
+ 
   const header = request.headers.get("accept-language") ?? "";
   return header.toLowerCase().startsWith("es") ? "es" : "en";
 }
@@ -21,8 +21,6 @@ export function middleware(request: NextRequest) {
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)
   );
 
-  // Si la URL ya trae /es o /en:
-  // Guardamos cookie con ese idioma (persistencia)
   if (currentLocale) {
     const res = NextResponse.next();
     res.cookies.set(COOKIE_NAME, currentLocale, {
@@ -32,7 +30,6 @@ export function middleware(request: NextRequest) {
     return res;
   }
 
-  // Si NO trae idioma, redirigir al preferido (cookie o navegador)
   const preferred = getPreferredLocale(request);
   const url = request.nextUrl.clone();
   url.pathname = `/${preferred}${pathname}`;
