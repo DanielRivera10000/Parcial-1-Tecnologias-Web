@@ -1,10 +1,10 @@
-type Dictionary = Record<string, string>;
+type Diccionario = Record<string, string>;
 
-const dictionaries: Record<string, () => Promise<Dictionary>> = {
+const diccionarios: Record<string, () => Promise<Diccionario>> = {
   es: () => import("../dictionaries/es.json").then((m) => m.default),
   en: () => import("../dictionaries/en.json").then((m) => m.default),
 };
 
-export async function getDictionary(lang: string): Promise<Dictionary> {
-  return (dictionaries[lang] ?? dictionaries.en)();
+export async function getDictionary(lang: string): Promise<Diccionario> {
+  return (diccionarios[lang] ?? diccionarios.en)();
 }

@@ -1,4 +1,25 @@
 {
-  "welcome": "Welcome",
-  "profile": "Profile"
+  "tituloPrincipalInicio": "Harry Potter Characters",
+  "descripcionInicio": "Explore the magical universe of Harry Potter: a complete list of characters with their house, species, and key details.",
+
+  "inicio": "Home",
+  "tituloLogo": "Harry Potter logo",
+  "idiomaIngles": "EN",
+  "idiomaEspanol": "ES",
+
+  "derechosFooter": "© 2026 Harry Potter App. All rights reserved.",
+  "cursoFooter": "Developed for: ISIS3710",
+
+  "tituloSecundarioDetalle": "Detail of",
+  "descripcionDetalle": "Check detailed information about each character from the magical world: house, actor or actress, wand, species, ancestry, and other relevant data.",
+
+  "detalleImagen": "Image of",
+  "detalleGenero": "Gender",
+  "detalleCasa": "House",
+  "detalleVarita": "Wand information",
+  "detalleMadera": "Wood",
+  "detalleNucleo": "Core",
+  "detalleLongitud": "Length",
+  "detalleSinCasa": "No house",
+  "detalleSinInformacion": "No information"
 }
