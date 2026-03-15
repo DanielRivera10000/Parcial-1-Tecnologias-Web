@@ -44,16 +44,14 @@ export default function DetallePersonaje({
             </p>
 
             <div className="mt-2">
-              <p className="mb-3 text-base font-bold">{texto.detalleVarita}</p>
+              <p className="mb-3 text-base">
+                <span className="font-bold">{texto.detalleVarita}:</span>{" "}
+                {personaje.wand.core || texto.detalleSinInformacion}
+              </p>
 
               <p className="mb-3 text-base">
                 <span className="font-bold">{texto.detalleMadera}:</span>{" "}
                 {personaje.wand.wood || texto.detalleSinInformacion}
-              </p>
-
-              <p className="mb-3 text-base">
-                <span className="font-bold">{texto.detalleNucleo}:</span>{" "}
-                {personaje.wand.core || texto.detalleSinInformacion}
               </p>
 
               <p className="text-base">
@@ -78,4 +76,5 @@ export default function DetallePersonaje({
     </section>
   );
 }
+
 
